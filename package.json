@@ -1,0 +1,17 @@
+{
+  "name": "reactive",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon --watch src -e ts --exec ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.8.3"
+  }
+}
