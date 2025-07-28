@@ -4,10 +4,10 @@ import hasHandler from "./behavior/hasHandler";
 import ownKeysHandler from "./behavior/ownKeysHandler";
 import setHandler from "./behavior/setHandler";
 
-const handlers = {
+const handlers: ProxyHandler<Record<string | symbol, any>> = {
   get: getHandler,
   set: setHandler,
-  delete: deleteHandler,
+  deleteProperty: deleteHandler,
   has: hasHandler,
   ownKeys: ownKeysHandler,
 };
