@@ -1,12 +1,24 @@
 import { TriggerOpTypes } from "../types/triggerOpTypes.bean";
+import { getEffectFns, triggerTypeTransfer } from "../utils/trigger.util";
+import { activeEffect } from "./effect";
 
 function trigger<T extends Record<string | symbol, any>>(
   target: T,
   type: TriggerOpTypes,
   key: string | symbol
 ) {
-  console.log("------------------");
-  console.log("触发器被调用了");
-  console.log(`拦截到了${type}行为，属性为${String(key)}`);
+  // 找到依赖，执行依赖
+  const effectFns = getEffectFns(target, type, key);
+  if (!effectFns) return;
+  for (const effectFn of effectFns) {
+    if (effectFn === activeEffect) continue;
+    if (effectFn.options.scheduler) {
+      // 用户传递了回调函数，用户期望自己处理依赖函数
+      effectFn.options.scheduler(effectFn);
+    } else {
+      // 执行依赖函数
+      effectFn();
+    }
+  }
 }
 export default trigger;

@@ -47,7 +47,6 @@ function getHandler<T extends Record<string | symbol, any>>(
     return target;
   }
 
-  console.log(`拦截到了读取${String(key)}行为`);
   // 收集依赖
   track(target, TrackOpTypes.GET, key);
 

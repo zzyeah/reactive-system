@@ -3,3 +3,5 @@ export enum TrackOpTypes {
   HAS = "has",
   ITERATE = "iterate",
 }
+
+export const ITERATE_KEY = Symbol("iterate");
