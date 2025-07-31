@@ -1,8 +1,9 @@
+import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
 import { TriggerOpTypes } from "../types/triggerOpTypes.bean";
 import { getEffectFns, triggerTypeTransfer } from "../utils/trigger.util";
 import { activeEffect } from "./effect";
 
-function trigger<T extends Record<string | symbol, any>>(
+function trigger<T extends ReactiveTarget>(
   target: T,
   type: TriggerOpTypes,
   key: string | symbol

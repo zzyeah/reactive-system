@@ -1,3 +1,4 @@
+import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
 import { ITERATE_KEY, TrackOpTypes } from "../types/trackOpTypes.bean";
 import { activeEffect, targetMap } from "./effect";
 
@@ -13,7 +14,7 @@ export function resumeTracking() {
   shouldTrack = true;
 }
 
-function track<T extends Record<string | symbol, any>>(
+function track<T extends ReactiveTarget>(
   target: T,
   type: TrackOpTypes,
   key?: string | symbol
@@ -36,10 +37,10 @@ function track<T extends Record<string | symbol, any>>(
     key = ITERATE_KEY;
   }
 
-  let typeMap = propMap.get(key);
+  let typeMap = propMap.get(key!);
   if (!typeMap) {
     typeMap = new Map();
-    propMap.set(key, typeMap);
+    propMap.set(key!, typeMap);
   }
 
   // 最后一步，根据 type 值找对应的 Set
@@ -55,5 +56,7 @@ function track<T extends Record<string | symbol, any>>(
     depSet.add(activeEffect);
     activeEffect.deps.push(depSet); // 将集合存储到 deps 中
   }
+
+  console.log(targetMap);
 }
 export default track;

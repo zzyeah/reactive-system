@@ -1,10 +1,11 @@
+import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
 import deleteHandler from "./behavior/deleteHandler";
 import getHandler from "./behavior/getHandler";
 import hasHandler from "./behavior/hasHandler";
 import ownKeysHandler from "./behavior/ownKeysHandler";
 import setHandler from "./behavior/setHandler";
 
-const handlers: ProxyHandler<Record<string | symbol, any>> = {
+const handlers: ProxyHandler<ReactiveTarget> = {
   get: getHandler,
   set: setHandler,
   deleteProperty: deleteHandler,

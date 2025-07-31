@@ -1,7 +1,8 @@
 import trigger from "../../effect/trigger";
+import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
 import { TriggerOpTypes } from "../../types/triggerOpTypes.bean";
 
-function deleteProperty<T extends Record<string | symbol, any>>(
+function deleteProperty<T extends ReactiveTarget>(
   target: T,
   key: string | symbol
 ) {

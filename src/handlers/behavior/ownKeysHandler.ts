@@ -1,7 +1,8 @@
 import track from "../../effect/track";
+import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
 import { TrackOpTypes } from "../../types/trackOpTypes.bean";
 
-function ownKeysHandler<T extends Record<string | symbol, any>>(
+function ownKeysHandler<T extends ReactiveTarget>(
   target: T
 ): (string | symbol)[] {
   track(target, TrackOpTypes.ITERATE);

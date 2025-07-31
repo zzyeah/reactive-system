@@ -6,7 +6,7 @@ import { TrackOpTypes } from "../types/trackOpTypes.bean";
 import { TriggerOpTypes } from "../types/triggerOpTypes.bean";
 import { normalizeParam } from "../utils/computed.util";
 
-export function computed<T>(getterOrOptions: ComputedParams<T>) {
+function computed<T>(getterOrOptions: ComputedParams<T>) {
   // 1. 参数归一化
   const { getter, setter } = normalizeParam<T>(getterOrOptions);
 
@@ -41,3 +41,5 @@ export function computed<T>(getterOrOptions: ComputedParams<T>) {
 
   return obj;
 }
+
+export default computed;

@@ -1,7 +1,5 @@
-export type Reactive<T> = T extends Record<string | symbol, any>
+export type Reactive<T> = T extends ReactiveTarget
   ? {
-      [K in keyof T]: T[K] extends Record<string | symbol, any>
-        ? Reactive<T[K]>
-        : T[K]
-    } & Record<string | symbol, any>
+      [K in keyof T]: T[K] extends ReactiveTarget ? Reactive<T[K]> : T[K];
+    } & ReactiveTarget
   : T;

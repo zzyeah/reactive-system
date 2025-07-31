@@ -1,4 +1,5 @@
 import { targetMap } from "../effect/effect";
+import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
 import { ITERATE_KEY, TrackOpTypes } from "../types/trackOpTypes.bean";
 import { TriggerOpTypes } from "../types/triggerOpTypes.bean";
 
@@ -22,7 +23,7 @@ export function triggerTypeTransfer(
  * @param key
  * @returns
  */
-export function getEffectFns<T extends Record<string | symbol, any>>(
+export function getEffectFns<T extends ReactiveTarget>(
   target: T,
   type: TriggerOpTypes,
   key: string | symbol

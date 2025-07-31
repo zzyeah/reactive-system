@@ -1,8 +1,9 @@
 import trigger from "../../effect/trigger";
+import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
 import { TriggerOpTypes } from "../../types/triggerOpTypes.bean";
 import { hasChanged } from "../../utils/util";
 
-function setHandler<T extends Record<string | symbol, any>>(
+function setHandler<T extends ReactiveTarget>(
   target: T,
   key: string | symbol,
   value: any,

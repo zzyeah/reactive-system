@@ -6,6 +6,7 @@ import {
   arrayInstrumentationsTypes,
   arrayPauseInstrumentationsTypes,
 } from "../../types/arrayInstrumentations.bean";
+import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
 import { RAW } from "../../types/symbol.bean";
 import { TrackOpTypes } from "../../types/trackOpTypes.bean";
 import { isArrayInstrumentationMethod, isObject } from "../../utils/util";
@@ -36,7 +37,7 @@ arrayPauseInstrumentationsTypes.forEach((method) => {
   };
 });
 
-function getHandler<T extends Record<string | symbol, any>>(
+function getHandler<T extends ReactiveTarget>(
   target: T,
   key: string | symbol,
   receiver: any

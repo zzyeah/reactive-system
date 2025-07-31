@@ -4,14 +4,13 @@
 
 import handlers from "./handlers";
 import { Reactive } from "./types/reactive.bean";
+import { ReactiveTarget } from "./types/reactive/reactiveTarget.bean";
 import { isObject } from "./utils/util";
 
 // 映射表：存储原始对象和代理对象的映射关系
 const proxyMap = new WeakMap();
 
-export function reactive<T extends Record<string | symbol, any>>(
-  target: T
-): Reactive<T> {
+export function reactive<T extends ReactiveTarget>(target: T): Reactive<T> {
   // 如果传入的 target 不是对象，则直接返回
   if (!isObject(target)) return target;
 
