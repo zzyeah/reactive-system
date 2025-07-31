@@ -1,5 +1,6 @@
 import { targetMap } from "../effect/effect";
-import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
+import { Environment } from "../types/effect/environment.bean";
+import { ReactiveTarget } from "../types/reactive/reactiveData.bean";
 import { ITERATE_KEY, TrackOpTypes } from "../types/trackOpTypes.bean";
 import { TriggerOpTypes } from "../types/triggerOpTypes.bean";
 
@@ -27,7 +28,7 @@ export function getEffectFns<T extends ReactiveTarget>(
   target: T,
   type: TriggerOpTypes,
   key: string | symbol
-): Set<any> | undefined {
+) {
   const propMap = targetMap.get(target);
   if (!propMap) return;
 
@@ -37,7 +38,7 @@ export function getEffectFns<T extends ReactiveTarget>(
     keys.push(ITERATE_KEY);
   }
 
-  const effectFns = new Set<any>();
+  const effectFns = new Set<Environment>();
 
   for (const key of keys) {
     const typeMap = propMap.get(key);

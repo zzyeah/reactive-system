@@ -6,7 +6,7 @@ import {
   arrayInstrumentationsTypes,
   arrayPauseInstrumentationsTypes,
 } from "../../types/arrayInstrumentations.bean";
-import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "../../types/reactive/reactiveData.bean";
 import { RAW } from "../../types/symbol.bean";
 import { TrackOpTypes } from "../../types/trackOpTypes.bean";
 import { isArrayInstrumentationMethod, isObject } from "../../utils/util";

@@ -1,4 +1,4 @@
-import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "../types/reactive/reactiveData.bean";
 import deleteHandler from "./behavior/deleteHandler";
 import getHandler from "./behavior/getHandler";
 import hasHandler from "./behavior/hasHandler";

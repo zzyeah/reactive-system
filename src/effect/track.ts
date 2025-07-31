@@ -1,4 +1,4 @@
-import { ReactiveTarget } from "../types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "../types/reactive/reactiveData.bean";
 import { ITERATE_KEY, TrackOpTypes } from "../types/trackOpTypes.bean";
 import { activeEffect, targetMap } from "./effect";
 
@@ -57,6 +57,6 @@ function track<T extends ReactiveTarget>(
     activeEffect.deps.push(depSet); // 将集合存储到 deps 中
   }
 
-  console.log(targetMap);
+  // console.log(targetMap);
 }
 export default track;

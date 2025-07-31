@@ -1,5 +1,5 @@
 import trigger from "../../effect/trigger";
-import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "../../types/reactive/reactiveData.bean";
 import { TriggerOpTypes } from "../../types/triggerOpTypes.bean";
 import { hasChanged } from "../../utils/util";
 

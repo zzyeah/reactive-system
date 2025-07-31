@@ -4,7 +4,7 @@
 
 import handlers from "./handlers";
 import { Reactive } from "./types/reactive.bean";
-import { ReactiveTarget } from "./types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "./types/reactive/reactiveData.bean";
 import { isObject } from "./utils/util";
 
 // 映射表：存储原始对象和代理对象的映射关系

@@ -1,5 +1,5 @@
 import track from "../../effect/track";
-import { ReactiveTarget } from "../../types/reactive/reactiveTarget.bean";
+import { ReactiveTarget } from "../../types/reactive/reactiveData.bean";
 import { TrackOpTypes } from "../../types/trackOpTypes.bean";
 
 function has<T extends ReactiveTarget>(target: T, p: string | symbol): boolean {

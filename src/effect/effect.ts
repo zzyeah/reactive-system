@@ -1,6 +1,6 @@
 import { EffectOptions } from "../types/effect/effectOptions.bean";
 import { Environment } from "../types/effect/environment.bean";
-import { TargetMap } from "../types/reactive/reactiveTarget.bean";
+import { TargetMap } from "../types/reactive/reactiveData.bean";
 
 export let activeEffect: Environment;
 export const targetMap = <TargetMap>new Map(); // 用于存储对象和其属性的依赖关系
@@ -42,7 +42,7 @@ export function effect(fn: Function, opts: EffectOptions = {}) {
   return environment;
 }
 
-function cleanup(environment: Environment) {
+export function cleanup(environment: Environment) {
   const deps = environment.deps;
   if (deps.length) {
     deps.forEach((dep) => {
