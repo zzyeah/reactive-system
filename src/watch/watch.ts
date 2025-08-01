@@ -33,8 +33,6 @@ function watch<T>(
           Promise.resolve().then(job);
           break;
         case "sync":
-          effectFn();
-          break;
         case "pre":
         default:
           job();
@@ -46,7 +44,7 @@ function watch<T>(
   if (options.immediate) {
     job();
   } else {
-    effectFn();
+    oldValue = effectFn();
   }
 
   return () => {
